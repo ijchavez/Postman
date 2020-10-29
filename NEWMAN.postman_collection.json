@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "ea0ff8e3-3c31-436b-a9be-7302424f1853",
+		"name": "NEWMAN",
+		"description": "Esta coleccion esta creada, en conjunto con la coleccion POSTMANEWMAN para poder hacer integracion con NEWMAN sin importar si actualizo la coleccion se siguen sumando gracias a la url provista por POSTMANWEMAN.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Peticion1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c2cc508d-ad6e-4b90-84b3-76922304e297",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql();\r",
+							"});\r",
+							"var header = \"Content-Length\";\r",
+							"pm.test(header + \" is present\", function () {\r",
+							"    pm.response.to.have.header(header);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peticion2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0485027b-4607-4790-a5c3-b7f81c2b541a",
+						"exec": [
+							"pm.test(\"Response time is less than 1200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlecho}}/get",
+					"host": [
+						"{{urlecho}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peticion3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cebaea5f-00d4-4524-af5a-4bcdcdcf1f11",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlecho}}/get",
+					"host": [
+						"{{urlecho}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Peticion4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80bc4daf-9a20-475e-9ede-1c170e2b3f98",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(/\"host\"/);\r",
+							"});\r",
+							"var rtime = 200\r",
+							"pm.test(\"Response time is less than \" + rtime, function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(rtime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlecho}}/get",
+					"host": [
+						"{{urlecho}}"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "52c62763-b290-4b47-9c1d-fa2959fd6bc6",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fe2a10ee-d167-46e8-a520-563d9f848bde",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
