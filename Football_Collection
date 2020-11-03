@@ -719,9 +719,10 @@
 						"exec": [
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"tests[\"Content-Type is present\"] = postman.getResponseHeader(\"Content-Type\");",
-							"tests[\"Client is not authenticated\"] = postman.getResponseHeader(\"X-Authenticated-Client\") === 'anonymous';",
+							"var cli = \"Gerardo Chavez\";",
+							"tests[\"Cliente se autentifica como \" + cli] = postman.getResponseHeader(\"X-Authenticated-Client\") === cli;",
 							"tests[\"API-Version header set\"] = postman.getResponseHeader(\"X-API-Version\") === 'v2';",
-							"tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available\") > 0;",
+							"//tests[\"X-Requests-Available > 0\"] = postman.getResponseHeader(\"X-Requests-Available\") > 0;",
 							"tests[\"X-RequestCounter-Reset > 0\"] = postman.getResponseHeader(\"X-RequestCounter-Reset\") > 0;"
 						],
 						"type": "text/javascript"
