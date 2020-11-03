@@ -689,7 +689,7 @@
 				"header": [
 					{
 						"key": "X-Auth-Token",
-						"value": ""
+						"value": "ab2c8638a9e44b629dd06f5cb12ead42"
 					}
 				],
 				"url": {
@@ -733,7 +733,7 @@
 				"header": [
 					{
 						"key": "X-Auth-Token",
-						"value": ""
+						"value": "ab2c8638a9e44b629dd06f5cb12ead42"
 					}
 				],
 				"url": {
